@@ -1,0 +1,124 @@
+
+{% load static %}
+
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="{% static 'css/evSahibiOlun.css'%}" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="imgC"><a href="{% url 'konaklamaYerleri'%}"><img src="../static/img/car.png" style="height:100%;width:100%"/></a></div>     
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active" style="margin-left:450px;"> <p class="pD">Evinizi veya odanızı misafirlere açın</p></li>
+            </ul>                 
+      </nav>
+      <div class="container">
+          <div class="row">
+              <div class="col-md-8">
+                <video width="400" height="240" controls style="margin-left: 35%;margin-right: 10%;border-radius:10px;margin-top:10px;">
+                    <source src="../static/img/1.mp4" type="video/mp4">
+                  </video>
+              </div>
+              <div class="col-md-4">
+                <button type="button" class="btn btn-dark" style="margin-top:100px;">
+                  {% if user.is_authenticated %}
+                    <a href="{%url 'evSahibiOlunAcilis'%}" style="color:white">Ev Sahibi Olun</a>
+                    {% else %}
+                    <a href="{%url 'kaydolun'%}">Ev Sahibi Olun</a>
+                    {% endif %}
+                </button>
+              </div>
+             
+              </div>
+          </div>
+      </div>
+       
+      
+       
+      <h3 style="text-align:center;margin-top:10px;">Ev sahibi olduğunuz zaman ne kadar kazanacağınızı öğrenin</h3>
+      <div class="container">
+          <div class="row">
+              <div class="col-md-4">
+                  <div class="kutu1"><p style="font-size:12px; font-weight: bold;">İstanbul'da ev sahiplerinin kazandığı ortalama tutar</p>
+                   <h2 style="padding-left:20px;"> {{kazanc|safe}}tl</h2> 
+                  </div>
+              </div>
+              <div class="col-md-4">
+                <div class="kutu2"><p style="font-size:12px;font-weight: bold;">İstanbul'da tek rezervasyon ile kalınabilir maksimum gece sayısı</p>
+                  <h2 style="padding-left:20px;"> {{maksimumGece|safe}} gece</h2> 
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="kutu3"><p style="font-size:12px;font-weight: bold;">İstanbul'da en çok konaklamanın olduğu ilçe</p>
+                  <h2 style="padding-left:20px;"> {{yer|safe}} </h2>
+                </div>
+              </div>
+          </div>
+      </div>
+      <br/>
+      <br/>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-6"> {{m|safe}}</div>
+          <div class="col-md-4">
+            <img src="../static/img/evler.png">
+            <p style="font-size:9px;padding-left:120px;">İstanbul konaklama yerleri haritası</p>
+          </div>
+       <!--  {{data|safe}}-->
+      <!-- {% for data in harita %}
+        <h3>{{data.neighbourhood}}</h3>
+       {% endfor%}-->
+       
+      </div>
+      </div>
+      <div>
+              
+        <!--  {{evler|safe}}-->
+       
+      </div>
+
+
+      <br/>
+      <br/>
+      <footer class="page-footer font-small blue pt-4">
+        <div class="container-fluid text-center text-md-left">
+          <div class="row">
+            <div class="col-md-6 mt-md-0 mt-3">
+              <h5 class="">Hayallerinizi ertelemeyin</h5>
+              <p>En değerli olgu zamandır. Zamanınıza fayda sağladığımız için mutluyuz.</p>
+            </div>
+            <hr class="clearfix w-100 d-md-none pb-3">
+            <div class="col-md-3 mb-md-0 mb-3">
+              <h5 class="">Konaklamam</h5>
+              <ul class="list-unstyled">
+                <li><a href="{% url 'konaklamaYerleri'%}" style="color:black;">Konaklama Yerleri</a></li>
+                <li><a href="{% url 'deneyimler'%}" style="color:black;">Deneyimler</a></li>
+                <li><a href="{% url 'cevrimiciDeneyimler'%}" style="color:black;">Çevrim içi deneyimler</a></li>
+                <li><a href="{%url 'evSahibiOlun'%}" style="color:black;">Ev sahibi olun</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3 mb-md-0 mb-3">
+              <h5 class="">Yardım</h5>
+              <ul class="list-unstyled">
+                <li><a href="{% url 'yardim1'%}" style="color:black;">Başlarken</a></li>
+                <li><a href="{% url 'yardim2'%}" style="color:black;">Hesabınıza Erişim</a></li>
+                <li><a href="{% url 'yardim3'%}" style="color:black;">Rezervasyon Hakkında</a></li>
+                <li><a href="{% url 'yardim4'%}" style="color:black;">Ev sahipliği hakkında</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright text-center py-3" >© 2022 Copyright:
+          <a href="/" style="color:black;"> KONAKLAMAM</a>
+        </div>
+      </footer>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <!--jquery dosyasını ekleme-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,93 @@
+
+.alanKonaklama
+{
+   padding-top: 20px;
+}
+.top-navigationKonaklama
+{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  color:black;
+  
+}
+.navKonaklama 
+{
+    display: flex;
+    flex-direction: column;   
+    min-width: 70%;
+  }
+  .search {
+    display: flex;
+    flex-flow: row no-wrap;
+    justify-content: space-evenly;
+    background: white;
+  
+    border-radius: 50px;
+    overflow: hidden;
+  }
+  
+  .search .label {
+    display: block;
+    font-size: 0.85rem;
+    color: #111111;
+    font-weight: bold;
+  }
+  
+  .search-inputs {
+    
+    padding: 16px 24px;
+  }
+  
+  .search-inputs:nth-child(1) {
+    flex: 1.5 0 0%;
+  }
+  
+  .search-inputs:nth-child(2),
+  .search-inputs:nth-child(3){
+    flex: 1 0 0%;
+  }
+  
+  .search-inputs:nth-child(4){
+    flex: 0.85 0 0%;
+  }
+  
+  .search-inputs input {
+    border: none;
+    display: block;
+  }
+  
+  .search-button {
+    flex: 0 0 auto;
+    padding: 8px 8px 8px 0;
+  }
+  
+  .search-button button {
+    font-size: 16px;
+    width: 48px;  
+    height: 48px;
+    border-radius: 30px;
+    border: none;
+    background: red;
+    color: white;
+  }
+  
+  .cta {
+    flex: 1.5 0 0%;
+  }*/
+  .imgC
+  {
+      width: 50px;
+      height: 50px;
+      margin-top: 0;
+      margin-left: 0;
+    
+  }
+  
+  .pD
+  {
+      margin-top: 6px;
+      margin-left:4px;
+      font-weight: bold;
+  }
+ 

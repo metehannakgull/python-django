@@ -1,0 +1,225 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        
+        <link href="{% static 'css/evSahibiOlunAcilis.css'%}" rel="stylesheet">
+         <!---->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,500" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <!---->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <!---->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+        
+        <!---->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>  
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="{% url 'konaklamaYerleri'%}" style="color:black">KONAKLAMAM</a>
+                
+              </div>
+              <ul class="nav navbar-nav" style="position:absolute;right:0px;">
+                <li><a href="#">Süper Ev sahibine sorun</a></li>
+                <li><a href="#">Yardim</a></li>
+                <li><a href="#">Kaydet ve Çık</a></li>
+              </ul>
+            </div>
+          </nav>
+          <!--
+           <div class="container">
+               <div class="row">
+                   <div class="col-md-3"></div>
+                   <div class="col-md-6">
+                    <br/>
+                    <br/>
+                    <br/>
+                       <button class="button button1">Apartman dairesi</button>
+                       <br/>
+                       <br/>
+                       <button class="button button1">Ev</button>
+                       <br/>
+                       <br/>
+                       <button class="button button1">İkincil birim</button>
+                       <br/>
+                       <br/>
+                       <button class="button button1">Benzersiz yer</button>
+                       <br/>
+                       <br/>
+                       <button class="button button1">Oda kahvaltı</button>
+                       <br/>
+                       <br/>
+                       <button class="button button1">Butik otel</button>
+                    </div>
+                   <div class="col-md-3"></div>
+               </div>
+           </div>-->
+           <div class="container">
+               <div class="row">
+                <div class="col-md-4">
+                    <h4 class="text-center alert alert-info">Konaklama Yerleri Ekleme</h4>
+                    <form action="" method="POST">
+                    {% csrf_token%}
+                    {{form.as_p}}
+                    <input type="submit" class="btn btn-success" value="Ekle">
+                    </form>
+                </div>
+                <div class="col-md-8">
+                   <h4 class="text-center alert alert-info">Konaklama Yerlerimi Göster</h4>
+                   {% if stu%}
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Numara</th>
+                                <th scope="col">konaklamaYeri</th>
+                                <th scope="col">Ekle/Sil</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                {% for st in stu%}
+                            <tr>
+                                <th scope="row">{{st.id}}</th>
+                                <td>{{st.name}}</td>
+                                <td>{{st.email}}</td>
+                                <td>{{st.numara}}</td>
+                                <td>{{st.konaklamaYeri}}</td>
+                                <td>
+                                    <a href="{% url 'evSahibiOlunAcilisUpdate' st.id %}" class="btn btn-warning btn-sm">Edit</a>
+                                    <form action="{% url 'deleteData' st.id %}" method="post" class="d-inline">{% csrf_token%}<input type="submit" class="btn btn-danger" value="Sil"></form>
+                                    
+                                </td>
+                            </tr>
+                            {% endfor%}
+                            </tbody>
+                        </table>
+                   {% else %}
+                      <h4 class="text-center alert alert-warning">Kayıt Yok</h4>
+                   {% endif %}
+                </div>
+                
+              </div>
+           </div>
+
+           <div>
+             <div class="container">
+                <div class="row">
+                  -------------------------------------
+                    <div style="height:700px; width:700px;">
+                      <!---->
+                      <div class="col s12 dd-container" style="margin-top:30px">
+                        <div class="card dd-card">
+                          <div class="card-content black-text file-field">
+                            <div id="drop-container" style="border-style: solid;border-color: #34495E;border-radius: 4px;">
+                              <i style=" color: #000000;"><!--class="material-icons large upload-icon"-->
+                                <img src="https://img.icons8.com/ios/100/000000/drag-and-drop.png"/>
+                              </i>
+                              <span style="font-size: 1.1em;"><b>Resim yükle</b></span>
+                              <span class="or-txt"></span>
+                              <form action="#">
+                                <div id="browse-container"><!--style="background-color:gray;"-->
+                                  <!--<span>Browse</span>-->
+                                  <input type="file" id="browse-button" accept="image/*">
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!---->
+                      <div class="col s12 uf-container">
+                        <div class="card uf-card">
+                          <img class="card crop" id="img-card-1"/>
+                        </div>
+                        <div class="waves-effect waves-light btn" id="upload-button">
+                          <span>Çalıştır</span>
+                        </div>
+                        <div class="waves-effect waves-light btn" id="go-back">
+                          <span>Temizle</span>
+                        </div>
+                      </div>
+                      <div class="col s12 dt-container">
+                        <div class="center" id="result-text">
+                        </div>
+                
+                        <div class="waves-effect waves-light btn button" id="show" style="background-color:gray;">
+                          <span>Tahmini göster</span>
+                        </div>
+                      </div>
+                        <div class="col s12 it-container">
+                          <div class="card it-card">
+                            <img id="#img-card-2" src="http://127.0.0.1:8000/object_detection/Object_Detection/static/test.jpeg" style="position: absolute;left:350px;top:850px;width:300px;heigth:300px;display: block;align:center;"/>
+                          </div>
+                          <div class="waves-effect waves-light btn button" id="go-start" style="background-color:gray;margin-top:10px;">
+                          <span>Yeni dosya seç</span>
+                          </div>
+                        </div>
+                      </div>
+                      <!--
+                      <div id="modal1" class="modal">
+                        <div class="modal-content">
+                          <div style="width: 50px; height : 50px; overflow: hidden; align:center;">
+                
+                              <div class="bar" style="background-color: #34495E !important;">
+                            <div class="circle"></div>
+                            <p>Loading</p>
+                          </div>
+                
+                          </div>
+                        </div>
+                      </div>
+                      -->
+                    </div>
+                  </div>
+                 
+           </div>
+           
+          <br/>
+          <br/>
+           <div class="footer-clean">
+            <footer>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-4 col-md-3 item">
+                            <h3>Konaklamam</h3>
+                            <ul>
+                                <li style="list-style-type:none;"><a href="{% url 'konaklamaYerleri'%}" style="color:black;">Konaklama Yerleri</a></li>
+                                <li style="list-style-type:none;"><a href="{%url 'evSahibiOlun'%}" style="color:black">Ev Sahibi Olun</a></li>
+                                <li style="list-style-type:none;"><a href="{% url 'deneyimler'%}" style="color:black">Deneyimler</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4 col-md-3 item">
+                            <h3>Yardım</h3>
+                            <ul>
+                                <li style="list-style-type:none;"><a href="{% url 'yardim1'%}" style="color:black">Başlarken</a></li>
+                                <li style="list-style-type:none;"><a href="{% url 'yardim4'%}" style="color:black">Ev sahipliği hakkında</a></li>
+                                <li style="list-style-type:none;"><a href="{% url 'yardim3'%}" style="color:black">Rezervasyon Hakkında</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4 col-md-3 item">
+                          
+                        </div>
+                        <div class="col-lg-3 item social">
+                            <br/>
+                            <br/>
+                            <br/>
+                            <a href="{%url 'konaklamaYerleri'%}" style="color:black"><p class="copyright"> KONAKLAMAM</p></a>
+                        </div>
+                        
+                    </div>
+                    <p class="copyright" style="text-align:center;">© 2022 Copyright: KONAKLAMAM</p>
+                </div>
+            </footer>
+        </div>
+           
+        
+    </body>
+</html>
+ 

@@ -1,0 +1,84 @@
+<!--Header kısmındaki sayfa geçişleri için bu base kalıbı kullanılır.-->
+{% load static %}
+<html>
+   <head>
+       <title>Konaklamam</title>
+       
+       <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+       <!--bootstrap css dosyasını ekleme-->
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+       <link href="{% static 'css/base.css'%}" rel="stylesheet">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       
+    </head>
+   <body>   
+    <div class="container">
+      <div class="row">
+      
+    <header class="headerBase">
+        <div class="covid19">
+            <a href="{% url 'bulasiciHastalikOnlem'%}"><p>Bulaşıcı hastalıklar için aldığımız önlemler hakkındaki güncel bilgileri öğrenin</p></a>
+        </div>
+        <div class="alan">
+            <div class="top-navigation">
+              <div class="logo"><a href="{% url 'konaklamaYerleri'%}"><i class="fa fa-car"></i> KONAKLAMAM</a></div>
+            <nav>
+                <div class="nav-menu">
+                  <ul class="ulnavmenu">
+                    <li class="linavmenu"><a href="{% url 'konaklamaYerleri'%}" class="dsa">Konaklama yerleri</a></li>
+                    <li class="linavmenu"><a href="{% url 'deneyimler'%}">Deneyimler</a></li>
+                    <li class="linavmenu"><a href="{% url 'cevrimiciDeneyimler'%}">Çevrim içi deneyimler</a></li>
+                    <li class="linavmenu2"><a href="{% url 'evSahibiOlun'%}">Ev sahibi olun</a></li>
+                     {% if user.is_authenticated %}
+                    <li class="linavmenu3">
+                  
+                       <div class="divli">
+                          
+                        <label for="touch"><span>{{fname}}</span></label>
+                        <ul class="slide">
+                            <li><button type="submit" style="background-color:#202122;"><a href="{% url 'oturumKapatin'%}">Oturum Kapat</a></button></li>
+                            <li><a href="#">Mesajlar</a></li>
+                            <li><a href="#">Seyahatlar</a></li>
+                            <li><a href="{% url 'evSahibiOlun'%}">Ev sahipliği yapın</a></li>
+                            <li><a href="#">Bir deneyime ev sahipliği yapın</a></li>
+                            <!--<li><a href="#">Ev sahibi yönlendirin</a></li>-->  
+                        </ul>
+                        </div>
+                    </li>
+                    {% else %}
+                    <li class="linavmenu3">
+                    <div class="divli">
+                      <label for="touch"><span>kullanıcı</span></label>
+                      
+                    <ul class="slide">
+                      <li><a href="{% url 'kaydolun'%}">Kaydolun</a></li>
+                        <li><a href="{%url 'oturumAcin'%}">Oturum açın</a></li>
+                        <li><a href="{% url 'evSahibiOlun'%}">Ev sahipliği yapın</a></li>
+                        <li><a href="#">Bir deneyime ev sahipliği yapın</a></li>
+                        <li><a href="{% url 'yardim'%}">Yardım</a></li>
+                    </ul>
+                  </div>
+                      
+                </li>
+                    {% endif %}
+              
+              
+                </ul>
+                
+                 
+                </div>  
+            </nav>
+            </div>
+        </div>
+    </header>
+  </div>
+</div>
+      
+     {% block content %}
+            {% endblock content %}
+          
+</body>
+</html>
+
+

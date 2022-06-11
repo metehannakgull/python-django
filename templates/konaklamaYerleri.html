@@ -1,0 +1,143 @@
+{% extends 'base.html'%}
+{% block content %}
+{% load static %}
+<head>
+    <link href="{% static 'css/konaklamaYerleri.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+    .mySlides {display:none;}
+    </style>  
+    </head>
+<body>
+    <header style="width:100%;height:650px;background-color:black">
+       <!-- 
+        <div class="alanKonaklama">
+            <div class="top-navigationKonaklama">
+                <nav class="navKonaklama">
+                    <form class="search"> 
+                        <div class="search-inputs">
+                          <label for="location"> 
+                            <div class="label">Konum</div>
+                            <input name="location" id="location" placeholder="Nereye gidiyorsunuz?"/>
+                          </label>
+                          
+                        </div>
+                        <div class="search-inputs">
+                          <label for="check-in"> 
+                            <div class="label">Giriş</div>
+                            <input name="check-in" id="check-in" placeholder="Tarih ekleyin"/>
+                          </label>
+                        </div>
+                        <div class="search-inputs">
+                          <label for="check-out"> 
+                            <div class="label">Çıkış</div>
+                            <input name="check-out" id="check-out" placeholder="Tarih ekleyin"/>
+                          </label>
+                        </div>
+                        <div class="search-inputs">
+                          <label for="guests"> 
+                            <div class="label">Misafirler</div>
+                            <input name="guests" id="guests" placeholder="Misafir Ekleyin"/>
+                          </label>
+                        </div>
+                        <div class="search-button">
+                          <button onclick="preventDefault()"><i class="fa fa-search"></i></button>
+                        </div>
+                      </form>
+                </nav>
+            </div>-->
+        </div>
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div style="width:500px;height:400px;margin-top:35px;">
+               <a href="{% url 'yardim1'%}"><img src="../static/img/gezgin10.jpg" style="height:400px;width:100%;border-radius:10px;box-shadow:4px 4px 4px gray;"/></a>
+               <a href="{% url 'yardim1'%}" style="color:white"><h5 style="color:white;margin-top:10px;padding-left:20px;">Konaklamam ilk adım</h5></a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div style="width:500px;height:400px;border-radius:10px;margin-top:35px;">
+                <a href="{% url 'yardim3'%}"><img src="../static/img/gezgin5.jpg" style="height:400px;width:100%;border-radius:10px;box-shadow:4px 4px 4px gray;"/></a>
+                <a href="{% url 'yardim3'%}" style="color:white"><h5 style="color:white;margin-top:10px;padding-left:20px;">Rezervasyon</h5></a>
+              </div>
+            </div>
+      </div>
+      </div>
+    </header>
+     <h2 style="margin-top:20px;margin-left:20px;">Gelecek Seyahatleriniz için Fikirler</h2>
+    <div style="height:550px;">
+      <br/>
+        <div class="w3-content w3-display-container">
+            <a href="#"><img class="mySlides" src="../static/img/gezgin11.png" style="width:100%;height:500px;"></a>
+            <a href="#"><img class="mySlides" src="../static/img/gezgin12.png" style="width:100%;height:500px;"></a>
+            <a href="#"><img class="mySlides" src="../static/img/gezgin8.jpg" style="width:100%;height:500px;"></a>
+            <a href="#"><img class="mySlides" src="../static/img/gezgin13.jpg" style="width:100%;height:500px;"></a>
+
+            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+         </div>
+    </div>
+    
+    <div style="height:300px;"></div>
+    
+    <br/>
+    <br/>
+    <footer class="page-footer font-small blue pt-4">
+      <div class="container-fluid text-center text-md-left">
+        <div class="row">
+          <div class="col-md-6 mt-md-0 mt-3">
+            <h5 class="">Hayallerinizi ertelemeyin</h5>
+            <p>En değerli olgu zamandır. Zamanınıza fayda sağladığımız için mutluyuz.</p>
+          </div>
+          <hr class="clearfix w-100 d-md-none pb-3">
+          <div class="col-md-3 mb-md-0 mb-3">
+            <h5 class="">Konaklamam</h5>
+            <ul class="list-unstyled">
+              <li><a href="{% url 'konaklamaYerleri'%}" style="color:black;">Konaklama Yerleri</a></li>
+              <li><a href="{% url 'deneyimler'%}" style="color:black;">Deneyimler</a></li>
+              <li><a href="{% url 'cevrimiciDeneyimler'%}" style="color:black;">Çevrim içi deneyimler</a></li>
+              <li><a href="{%url 'evSahibiOlun'%}" style="color:black;">Ev sahibi olun</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-md-0 mb-3">
+            <h5 class="">Yardım</h5>
+            <ul class="list-unstyled">
+              <li><a href="{% url 'yardim1'%}" style="color:black;">Başlarken</a></li>
+              <li><a href="{% url 'yardim2'%}" style="color:black;">Hesabınıza Erişim</a></li>
+              <li><a href="{% url 'yardim3'%}" style="color:black;">Rezervasyon Hakkında</a></li>
+              <li><a href="{% url 'yardim4'%}" style="color:black;">Ev sahipliği hakkında</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright text-center py-3" >© 2022 Copyright:
+        <a href="/" style="color:black;"> KONAKLAMAM</a>
+      </div>
+    </footer>
+    <script>
+      var slideIndex = 1;
+      showDivs(slideIndex);
+      
+      function plusDivs(n) {
+        showDivs(slideIndex += n);
+      }
+      
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";  
+        }
+        x[slideIndex-1].style.display = "block";  
+      }
+      </script>
+    
+   
+</div>
+</body>
+ 
+
+{% endblock content %}

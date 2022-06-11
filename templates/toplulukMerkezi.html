@@ -1,0 +1,15 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <link href="{% static 'css/toplulukMerkezi.css'%}" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="imgC"><a href="{% url 'konaklamaYerleri'%}"><img src="../static/img/car.png" style="height:100%;width:100%"/></a></div>     
+            <p class="pD">Topluluk Merkezi</p>           
+          </nav>
+          <h1>Topluluk Merkezi</h1>
+    </body>
+    </html>

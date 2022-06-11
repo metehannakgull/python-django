@@ -1,0 +1,86 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <link href="{% static 'css/bulasiciHastalikOnlem.css'%}" rel="stylesheet">
+    </head>
+    <body>
+       <div class="imgC"><a href="{% url 'konaklamaYerleri'%}"><img src="../static/img/car.png" style="height:100%;width:100%"/></a></div>
+       <div class="container">
+           <h1 class="baslik1">Seyahatlerden güvenli dönüş</h1>
+           <br/>
+           <h3 class="baslik2">Bulaşı hastalıklar süreçlerinde güvenli seyahat için detaylı bilgiler edinin.</h3>         
+           <div class="row">
+               <div class="col-md-6" >
+                  <div class="imgG1"><a href="{% url 'bulasiciHastalikBilgi1'%}"><img src="../static/img/gezgin.jpg" style="height:100%;width:100%;border-radius:10px;"/></a></div> 
+                  <h5 style="text-align:center;margin-top:2px;">Seyahat edenlerin bulaşıcı hastalıklar ile ilgili merak ettikleri</h5>
+                  <p style="text-align:center">Politikalarımız ile size sunduğumuz hizmetleri öğrenin.</p>
+                  <a href="{% url 'bulasiciHastalikBilgi1'%}"><p style="text-decoration:underline;color:black;text-align:center;">Daha fazla bilgi edinin</p></a>
+                  
+                  <div class="imgG3"><a href="{% url 'bulasiciHastalikBilgi3'%}"><img src="../static/img/gezgin3.jpg" style="height:100%;width:100%;border-radius:10px;"/></a></div> 
+                  <h5 style="text-align:center;margin-top:2px;">Bulaşıcı hastalıklardan etkilenen rezervasyonlar</h5>
+                  <p style="text-align:center">Rezervasyon iptali ve para iadesi seçeneklerini anlayın.</p>
+                  <a href="{% url 'bulasiciHastalikBilgi3'%}"><p style="text-decoration:underline;color:black;text-align:center;">Daha fazla bilgi edinin</p></a>
+               
+                </div>
+               <div class="col-md-6" >
+                <div class="imgG2"><a href="https://apply.joinsherpa.com/travel-restrictions?affiliateid=airbnb"><img src="../static/img/gezgin2.jpg" style="height:100%;width:100%;border-radius:10px;"/></a></div>
+                <h5 style="text-align:center;margin-top:2px;">Global seyahat engelleri</h5>
+                <p style="text-align:center">Bulunduğunuz bölgede veya seyahat etmeyi düşündüğünüz yerlerde ev sahipleri ve misafirler için güncel kuralları inceleyin.</p>
+                <a href="https://apply.joinsherpa.com/travel-restrictions?affiliateid=airbnb"><p style="text-decoration:underline;color:black;text-align:center;">Daha fazla bilgi edinin</p></a>
+
+                <div class="imgG4"><a href="{% url 'bulasiciHastalikBilgi4'%}"><img src="../static/img/gezgin4.jpg" style="height:100%;width:100%;border-radius:10px;"/></a></div>
+                <h5 style="text-align:center;margin-top:2px;">Hayalleriniz için gönül rahatlığı ile plan yapma</h5>
+                <p style="text-align:center">Kurallarda esneklik sağlayan ev sahiplerini bulmayı öğrenin.</p>
+                <a href="{% url 'bulasiciHastalikBilgi4'%}"><p style="text-decoration:underline;color:black;text-align:center;">Daha fazla bilgi edinin</p></a>
+            </div>
+           </div>
+           <br/>
+           <h1 class="baslik1">Güvenlik en önemli önceliğimizdir.</h1>
+           <br/>
+           
+       </div>
+     
+       <br/>
+    <br/>
+    <footer class="page-footer font-small blue pt-4">
+      <div class="container-fluid text-center text-md-left">
+        <div class="row">
+          <div class="col-md-6 mt-md-0 mt-3">
+            <h5 class="">Hayallerinizi ertelemeyin</h5>
+            <p>En değerli olgu zamandır. Zamanınıza fayda sağladığımız için mutluyuz.</p>
+          </div>
+          <hr class="clearfix w-100 d-md-none pb-3">
+          <div class="col-md-3 mb-md-0 mb-3">
+            <h5 class="">Konaklamam</h5>
+            <ul class="list-unstyled">
+              <li><a href="{% url 'konaklamaYerleri'%}" style="color:black;">Konaklama Yerleri</a></li>
+              <li><a href="{% url 'deneyimler'%}" style="color:black;">Deneyimler</a></li>
+              <li><a href="{% url 'cevrimiciDeneyimler'%}" style="color:black;">Çevrim içi deneyimler</a></li>
+              <li><a href="{%url 'evSahibiOlun'%}" style="color:black;">Ev sahibi olun</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-md-0 mb-3">
+            <h5 class="">Yardım</h5>
+            <ul class="list-unstyled">
+              <li><a href="{% url 'yardim1'%}" style="color:black;">Başlarken</a></li>
+              <li><a href="{% url 'yardim2'%}" style="color:black;">Hesabınıza Erişim</a></li>
+              <li><a href="{% url 'yardim3'%}" style="color:black;">Rezervasyon Hakkında</a></li>
+              <li><a href="{% url 'yardim4'%}" style="color:black;">Ev sahipliği hakkında</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright text-center py-3" >© 2022 Copyright:
+        <a href="/" style="color:black;"> KONAKLAMAM</a>
+      </div>
+    </footer>
+        <!--bootrstap js dosyasını ekleme-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <!--jquery dosyasını ekleme-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+           
+    </body>
+</html>
+

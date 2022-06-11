@@ -1,0 +1,80 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <link href="{% static 'css/bulasiciHastalikBilgi1.css'%}" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="imgC"><a href="{% url 'konaklamaYerleri'%}"><img src="../static/img/car.png" style="height:100%;width:100%"/></a></div>     
+            <p class="pD">Yardım Merkezi</p>           
+          </nav>
+          <br/>
+          <br/>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <h3 class="baslik2">Seyahat eden kişilerin bulaşıcı hastalıklar ile ilgili sorulara yanıtları</h3>
+                    <br/>
+                    <br/>
+                    <h5>Seyahat seçenekleri, temiz konaklamalar ve daha fazlası ile sizlere nasıl hizmet sunduğumuzu öğrenin.</h5>
+                    <br/>
+                    <p>Günümüzde bulaşıcı hastalıkların etkisi azalıyor ve seyahatler yeniden canlınırken, bunların tatil planlarınızı sekteye uğratıp uğratmayacağı konusunda belirsizlik olduğunu biliyoruz. Seyahat eden veya edecek olanları desteklemeye yardımcı olmak için sorunlarınızı takip ediyor ve elimizden geldiğince burada yanıtlıyoruz. Koşullara göre daha fazla sorunu tespit edip, sizleri bilgilendirmeye devam edeceğiz.</p>
+                    <br/>
+                    <p style="font-weight: bold;">Rezervasyon yaptığım seyahatimi iptal etmem gerekiyor, ne yapmalıyım?</p>
+                    <p>Seyahat iptal politikaları konaklama sahipleri tarafından belirlenir ve bölgelere göre farklılık gösterebilir. Konaklama yerinizin iptal politikası ile ilgili bilgilere, kaydın sayfasından veya rezervasyonlarınız bölümünden ulaşabilirsiniz.</p>
+                    <br/>
+                    <p style="font-weight: bold;">Bulaşıcı hastalık riski olan yerlere seyahat rezervasyonu yapmak istiyorum ama seyahat kısıtlamalarının ne şekilde gelişeceğinden emin değilim. Ne yapmalıyım?</p>
+                    <p>Bu bölgelerde ve dönemlerde seyahat için rezervasyon yapmakta endişe duymanız anlaşılır bir durumdur. İptal politikalarının dikkatle değerlendirerek rezervasyon yapmanızı ve esnek imkanlar sağlayan kayıtları seçmenizi öneririz.</p>
+                </div>
+                <div class="col-md-5">
+                    <br/>
+                    <br/>
+                    
+                    <img src="../static/img/gezgin5.jpg" style="height:300px;width:100%;border-radius:10px;"/>
+                </div>
+            </div>
+        </div>             
+        </div>
+        <br/>
+        <br/>
+        <footer class="page-footer font-small blue pt-4">
+          <div class="container-fluid text-center text-md-left">
+            <div class="row">
+              <div class="col-md-6 mt-md-0 mt-3">
+                <h5 class="">Hayallerinizi ertelemeyin</h5>
+                <p>En değerli olgu zamandır. Zamanınıza fayda sağladığımız için mutluyuz.</p>
+              </div>
+              <hr class="clearfix w-100 d-md-none pb-3">
+              <div class="col-md-3 mb-md-0 mb-3">
+                <h5 class="">Konaklamam</h5>
+                <ul class="list-unstyled">
+                  <li><a href="{% url 'konaklamaYerleri'%}" style="color:black;">Konaklama Yerleri</a></li>
+                  <li><a href="{% url 'deneyimler'%}" style="color:black;">Deneyimler</a></li>
+                  <li><a href="{% url 'cevrimiciDeneyimler'%}" style="color:black;">Çevrim içi deneyimler</a></li>
+                  <li><a href="{%url 'evSahibiOlun'%}" style="color:black;">Ev sahibi olun</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3 mb-md-0 mb-3">
+                <h5 class="">Yardım</h5>
+                <ul class="list-unstyled">
+                  <li><a href="{% url 'yardim1'%}" style="color:black;">Başlarken</a></li>
+                  <li><a href="{% url 'yardim2'%}" style="color:black;">Hesabınıza Erişim</a></li>
+                  <li><a href="{% url 'yardim3'%}" style="color:black;">Rezervasyon Hakkında</a></li>
+                  <li><a href="{% url 'yardim4'%}" style="color:black;">Ev sahipliği hakkında</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright text-center py-3" >© 2022 Copyright:
+            <a href="/" style="color:black;"> KONAKLAMAM</a>
+          </div>
+        </footer>
+         
+        <!--bootrstap js dosyasını ekleme-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <!--jquery dosyasını ekleme-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </body>
+</html>

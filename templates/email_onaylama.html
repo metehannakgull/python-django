@@ -1,0 +1,8 @@
+{% autoescape off %}
+
+Hoşgeldiniz.. 
+Merhaba {{name}}!
+Lütfen bu linke tıklayarak emailinizi onaylayın.
+Onaylama Linki: http://{{domain}}{% url 'activate' uidb64=uid token=token %}
+
+{% endautoescape %}

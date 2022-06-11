@@ -1,0 +1,80 @@
+{% load static %}
+<!--{%load crispy_forms_tags %}-->
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <link href="{% static 'css/oturumAcin.css'%}" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="imgC"><a href="{% url 'konaklamaYerleri'%}"><img src="../static/img/car.png" style="height:100%;width:100%"/></a></div>     
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active" style="margin-left:450px;"> <p class="pD">Hoşgeldiniz..</p></li>
+                </ul>                 
+          </nav>
+        <h3 style="margin-left:10px">Oturum Açın</h3>
+
+        <form action="/oturumAcin" method="post">
+            {% csrf_token %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-6">
+            <label for="username"><b>Kullanıcı Adı</b></label>
+            <input type="text" placeholder="Enter Username" name="username" required>
+
+            <label for="psw"><b>Şifre</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+                
+            <button type="submit">Giriş</button>
+            
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+           </div>
+           <div class="col-md-3">
+           </div>
+        </div>
+        </div>
+        </form>
+        <br/>
+    <br/>
+    <footer class="page-footer font-small blue pt-4">
+      <div class="container-fluid text-center text-md-left">
+        <div class="row">
+          <div class="col-md-6 mt-md-0 mt-3">
+            <h5 class="">Hayallerinizi ertelemeyin</h5>
+            <p>En değerli olgu zamandır. Zamanınıza fayda sağladığımız için mutluyuz.</p>
+          </div>
+          <hr class="clearfix w-100 d-md-none pb-3">
+          <div class="col-md-3 mb-md-0 mb-3">
+            <h5 class="">Konaklamam</h5>
+            <ul class="list-unstyled">
+              <li><a href="{% url 'konaklamaYerleri'%}" style="color:black;">Konaklama Yerleri</a></li>
+              <li><a href="{% url 'deneyimler'%}" style="color:black;">Deneyimler</a></li>
+              <li><a href="{% url 'cevrimiciDeneyimler'%}" style="color:black;">Çevrim içi deneyimler</a></li>
+              <li><a href="{%url 'evSahibiOlun'%}" style="color:black;">Ev sahibi olun</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-md-0 mb-3">
+            <h5 class="">Yardım</h5>
+            <ul class="list-unstyled">
+              <li><a href="{% url 'yardim1'%}" style="color:black;">Başlarken</a></li>
+              <li><a href="{% url 'yardim2'%}" style="color:black;">Hesabınıza Erişim</a></li>
+              <li><a href="{% url 'yardim3'%}" style="color:black;">Rezervasyon Hakkında</a></li>
+              <li><a href="{% url 'yardim4'%}" style="color:black;">Ev sahipliği hakkında</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright text-center py-3" >© 2022 Copyright:
+        <a href="/" style="color:black;"> KONAKLAMAM</a>
+      </div>
+    </footer>
+    </body>
+</html>
